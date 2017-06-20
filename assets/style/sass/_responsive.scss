@@ -1,0 +1,169 @@
+@media screen and (max-width: 1200px) {
+	#fold .hand-section {
+		.copy {
+			h1 {
+				font-size: 1.125rem;
+			}
+			h2 {
+				font-size: 1rem;
+			}
+		}
+		.hand img {
+			margin-right: 5rem;
+		}
+	}
+}
+
+@media screen and (max-width: 800px) {
+	section {
+		min-height: 10px;
+	}
+
+	#fold {
+		background: url(../img/fold/dcp4.png) no-repeat center center fixed; 
+		background-size: cover;
+		header {
+			a.logo {
+				width: 100vw;
+				img {
+					margin: 0 auto;
+					display: block;
+				}
+			}
+			nav {
+				display: none;
+			}
+		}
+		.hand-section {
+			flex-direction: column;
+			.copy {
+				width: 100vw;
+				padding: 2.5rem;
+				text-align: center;
+				.partners {
+					justify-content: center;
+					li {
+						height: 1.75rem;
+						margin: 1rem 1rem 0 1rem;
+					}
+				}
+			}
+			.hand {
+				width: 100vw;
+				padding: 0;
+				img {
+					margin: 0 auto;
+					display: block;
+					float: none;
+					height: 10rem;
+				}
+			}
+		}
+	}
+
+	#start {
+		padding: 2rem 0;
+		img {
+			height: 4rem;
+			margin-bottom: 2rem;
+		}
+		h2 {
+			font-size: 1rem;
+			margin-bottom: 2rem;
+		}
+		p {
+			font-size: 1rem;
+			padding: 0 2rem;
+			text-align: center;
+		}
+	}
+
+	.twitter #twitter-feed {
+		padding: 0;
+		&:before {
+			margin-top: 3rem;
+		}
+		ul {
+			display: block;
+			margin-top: 0;
+			li {
+				display: block;
+				width: 100vw;
+				border-right: 0;
+				padding: 0 2rem;
+				* {
+					text-align: center;
+				}
+				p.tweet {
+					margin-bottom: 0;
+				}
+				&:nth-child(n+2) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	#steps {
+		padding: 3rem 0 0;
+		h2 {
+			font-size: 1.5rem;
+			margin-bottom: 3rem;
+			padding: 0 2rem;
+		}
+		h3 {
+			margin-bottom: 3rem;
+			padding: 0 2rem;
+		}
+		ul {
+			display: block;
+			li {
+				width: 100%;
+				.content {
+					padding: 2rem;
+				}
+			}
+		}
+	}
+
+	#more {
+		padding: 3rem 0;
+		h3 {
+			a:first-child {
+				margin-right: .5rem;
+			}
+			.break {
+				display: none;
+			}
+		}
+		.links {
+			padding: 0 2rem;
+			a.register {
+				display: block;
+				&.minor {
+					display: block;
+					margin-top: 1rem;
+				}
+			}
+		}
+	}
+
+	#register {
+		.container {
+			padding: 0 2rem;
+			h1 {
+				font-size: 1.25rem;
+			}
+		}
+	}
+
+	#faq {
+		padding: 0 2rem;
+		h1 {
+			font-size: 1.25rem;
+		}
+	}
+
+}
+
+

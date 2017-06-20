@@ -1,0 +1,344 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,800);
+
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "base/base";
+
+%headline {
+	text-transform: uppercase;
+	font-weight: 800;
+	font-size: 3rem;
+	margin-bottom: 1rem;
+	color: white;
+}
+
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin button-flat($primary, $secondary) {
+	display: inline-block;
+	padding: .5em 1em;
+	background: $primary;
+	color: $secondary;
+	font-weight: 800;
+	text-transform: uppercase;
+	border-radius: 0;
+	position: relative;
+	border: 2px solid $primary;
+}
+
+@mixin text-stroke($color) {
+	-webkit-text-stroke: 1px $color;
+	text-shadow:
+		3px 3px 0 $color,
+		-1px -1px 0 $color,  
+		1px -1px 0 $color,
+		-1px 1px 0 $color,
+		1px 1px 0 $color;
+}
+
+@mixin text-shadow($color, $amount: 1px) {
+	text-shadow:
+		-#{$amount} -#{$amount} 0 $color,  
+		$amount -#{$amount} 0 $color,
+		-#{$amount} $amount 0 $color,
+		$amount $amount 0 $color;
+}
+
+$accent-color: #0092DD;
+$primary-color: $accent-color;
+$secondary-color: #0092DD;
+$light-grey: #f1f1f1;
+$dark-grey: #404040;
+
+* {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 400;
+	margin: 0;
+	padding: 0;
+	line-height: 2;
+}
+
+body {
+	line-height: 2;
+}
+
+section {
+	min-height: 100vh;
+}
+ 
+#fold {
+	min-height: 1px;
+	header {
+		background: white;
+		padding: 2rem;
+		display: flex;
+		flex-direction: row;
+		a.logo {
+			width: 20vw;
+			img {
+				height: 4rem;
+			}
+		}
+		nav {
+			width: 80vw;
+			height: 1rem;
+			margin-top: 1.25rem;
+			text-align: right;
+			span.hashtag a {
+				color: $accent-color;
+				margin-right: 1rem;
+			}
+			a.faq {
+				color: $accent-color;
+				margin-right: 1rem;
+			}
+			a.register {
+				@include button-flat(white, $secondary-color);
+				margin-left: 1rem;
+			}
+		}
+	}
+	.hand-section {
+		background: $accent-color;
+		display: flex;
+		.copy {
+			width: 60vw;
+			padding-left: 5rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			h1 {
+				text-transform: uppercase;
+				font-weight: 800;
+				color: white;
+				line-height: 1.25;
+				font-size: 2rem;
+			}
+			.partners {
+				display: flex;
+				flex-wrap: wrap;
+				li {
+					height: 2.5rem;
+					margin-right: 2rem;
+					margin-top: 1rem;
+					a {
+						img {
+							height: 100%;
+						}
+					}
+				}
+			}
+		}
+		.hand {
+			width: 40vw;
+			img {
+				height: 20rem;
+				float: right;
+				margin: 2.5rem 10rem 0 0;
+			}
+		}
+	}
+}
+
+#start {
+	background: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 4rem 0;
+	p {
+		@include outer-container;
+		color: $accent-color;
+		font-size: 1.5rem;
+		padding: 0 2.5vw; 
+		margin-bottom: 2rem;
+	}
+	img {
+		height: 8rem;
+		display: block;
+		margin: 0 auto 4rem auto;
+	}
+	h2 {
+		@extend %headline;
+		font-size: 2rem;
+		margin-bottom: 4rem;
+		color: $accent-color;
+		text-align: center;
+	}
+	.more p {
+		color: $dark-grey;
+		font-size: 1rem;
+	}
+}
+
+.twitter {
+	a i.fa-twitter {
+		text-align: center;
+		color: $secondary-color;
+		display: block;
+		font-size: 2rem;
+		margin: 2rem auto 0 auto;
+		text-decoration: none;
+	}
+	#twitter-feed {
+		ul {
+		 	display: flex;
+		 	flex-wrap: wrap;
+		 	margin: 2rem auto;
+		 	li {
+		 		width: 50vw;
+		 		margin-top: 2.5vw;
+		 		padding: 0 2.5vw;
+		 		border-right: 1px solid darken($light-grey, 5%);
+		 		.user {
+		 			font-size: .8rem;
+					margin-bottom: 1em;
+		 			a {
+		 				color: $secondary-color;
+		 			}
+		 			img {
+		 				display: none;
+		 			}
+		 		}
+		 		.tweet {
+					p {
+			 			margin-bottom: 0;
+			 		}
+			 		a {
+			 			color: $secondary-color;
+			 			text-decoration: underline;
+			 		}
+		 		}
+		 		&:last-child {
+		 			border-right: 0;
+		 		}
+		 	}
+		}
+	}
+}
+
+#steps {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 10px;
+	padding: 3rem 0;
+	background: $accent-color;
+	h2 {
+		@extend %headline;
+		font-size: 2rem;
+		margin-bottom: 1rem;
+		color: white;
+		text-align: center;
+	}
+	h3 {
+			@extend %headline;
+			font-size: 1rem;
+			margin-bottom: 3.5rem;
+			text-align: center;
+		}
+	ul {
+		display: flex;
+		flex-direction: row;
+		li {
+			width: 33.33%;
+			img {
+				width: 100%;
+				height: 50%;
+			}
+			.content {
+				padding: 2rem 2rem 0 2rem;
+				text-align: center;
+				h1 {
+					@extend %headline;
+					text-transform: uppercase;
+					font-weight: 800;
+					color: white;
+					font-size: 1.5rem;
+				}
+				p {
+					color: white;
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+#involved {
+	@extend #steps;
+	background: white;
+	h2,
+	h3 {
+		color: $accent-color;
+	}
+	ul {
+		width: 100% / 4;
+		li {
+			.content {
+				h1, 
+				h2 {
+					color: $accent-color;
+				}
+				p {
+					color: $dark-grey;
+					a {
+						color: $accent-color;
+					}
+				}
+			}
+		}
+	}
+}
+
+#more {
+	@extend #steps;
+	a { 
+		color: white;
+	} 
+	h2 {
+		margin-bottom: 1.5rem;
+	}
+	h3 {
+		margin-bottom: 3rem;
+		.break {
+			display: block;
+		}
+	}
+	.links {
+		text-align: center;
+		a.register {
+			@include button-flat(white, $secondary-color);
+			text-align: center;
+			margin: 0 .5rem;
+			&.minor {
+				@include button-flat($secondary-color, white);
+				border: 2px solid white;
+			}
+		}
+	}
+}
+
+#copyright {
+	text-align: center;
+	padding: 1rem 0;
+	p {
+		margin-bottom: 0;
+		a {
+			color: $accent-color;
+			text-decoration: underline;
+		}
+		&.attribution {
+			padding: 1rem;
+			font-size: .8rem;
+		}
+	}
+}
+
+@import "responsive";
